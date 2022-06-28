@@ -7,9 +7,5 @@ render()
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/'
 
-const Post = async () => {
-  const res = await fetch(url, {
-    method: ''
-  })
+const appId = "XbvsaAE4Kq5sfF9VGiHS"
 
-}
