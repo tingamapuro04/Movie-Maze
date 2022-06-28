@@ -6,6 +6,8 @@
   #main-Container > div > img {
     width: 200px;
     height: 300px;
+    margin-top: 20px;
+    border-radius: 20px;
   }
   
   #main-Container {

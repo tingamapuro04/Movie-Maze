@@ -6,7 +6,7 @@ class Shows{
     static viewShows = async () => {
         const response = await fetch(this.url);
         const shows = await response.json();
-        console.log(JSON.stringify(shows))
+        // console.log(JSON.stringify(shows))
         const showContainer = document.getElementById('main-Container');
     
         shows.forEach((show) => {
