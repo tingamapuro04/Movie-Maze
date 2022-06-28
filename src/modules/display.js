@@ -7,14 +7,14 @@ const render = async() => {
   List.slice(0, 9).forEach((movie) => {
     mainCon.innerHTML += `
     <div class="main" id="${List.indexOf(movie)}">
-      <img src="${movie.image.medium} alt= "${movie.name}"">
+      <img src=${movie.image.medium} alt= ${movie.name}>
     </div>
     <div class="movieDetails">
       <h2>"${movie.name}"</h2>
       <i class="fa-light fa-heart"></i>
     </div>
     <div class="likes"><p><span></span>likes</p></div>
-    <button>Comments</button>
+    <button id= "Btn-comment">Comments</button>
     `;
   })
 };
