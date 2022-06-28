@@ -1,4 +1,23 @@
-/* .nav-item{
+.likes > img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  #main-Container > div > img {
+    width: 200px;
+    height: 300px;
+  }
+  
+  #main-Container {
+    padding: 0;
+    list-style-type: none;
     display: flex;
-    flex-direction: row;
-} */
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  #main-Container > div {
+    width: 200px;
+  }
+  

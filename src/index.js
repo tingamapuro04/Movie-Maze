@@ -1,31 +1,34 @@
 import _ from 'lodash';
 import './style.css';
 
-class Movies{
+class Shows{
     static url = 'https://api.tvmaze.com/shows?page=10';
-    static showMovies = async () => {
+    static viewShows = async () => {
         const response = await fetch(this.url);
-        const data = await response.json();
-        const movieContainer = document.getElementById('main-Container');
+        const shows = await response.json();
+        console.log(JSON.stringify(shows))
+        const showContainer = document.getElementById('main-Container');
     
-        data.forEach((movie) => {
-          if (movie.display.image !== null) {
-            const movieDiv = document.createElement('div');
-            movieDiv.classList.add('each-movie');
-            movieDiv.innerHTML = `
-          <img src="${movie.display.image}" alt="movie-image">   //check in case meduim is required
+        shows.forEach((show) => {
+          if (show.image.original !== null) {
+            const showDiv = document.createElement('div');
+            showDiv.classList.add('each-show');
+            showDiv.innerHTML = `
+          <img src="${show.image.original}" alt="show-image">
           <div class="each-name">
-            <li>${movie.display.name}</li>
+            <li>${show.name}</li>
             <div class="likes">
-             <i class="fa-regular fa-heart" id="${movie.display.id}"></i>
+             <i class="fa-regular fa-heart" id="li-${show.id}"></i>
               <p>0 Likes</p>
             </div>
           </div>      
-          <button id="${movie.display.id}" class="button">Comments</button>`;
-            movieContainer.appendChild(movieDiv);
+          <button id="bt-${show.id}" class="button">Comments</button>`;
+            showContainer.appendChild(showDiv);
           }
         //   this.likes();
         //   this.addLikes();
         });
     }
 }
+
+Shows.viewShows();
