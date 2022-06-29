@@ -1,10 +1,9 @@
-import fetchFromApi from "./fromApi";
-import commentModal from "./Modal";
+import fetchFromApi from './fromApi.js';
+import commentModal from './Modal.js';
 
-
-const render = async() => {
+const render = async () => {
   const mainCon = document.querySelector('#main-Container');
-  const List = await fetchFromApi()
+  const List = await fetchFromApi();
   List.slice(0, 20).forEach((movie) => {
     mainCon.innerHTML += `
     <div class="main" id="${List.indexOf(movie)}">
@@ -17,8 +16,8 @@ const render = async() => {
     </div>
     <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
     `;
-  })
-  commentModal()
+  });
+  commentModal();
 };
 
-export default render
+export default render;

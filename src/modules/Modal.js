@@ -1,10 +1,10 @@
-import fetchFromApi from "./fromApi";
+import fetchFromApi from './fromApi.js';
 
 const commentModal = async () => {
-  const comment_Buttons = document.querySelectorAll('.Btn-comment') 
+  const commentButtons = document.querySelectorAll('.Btn-comment');
   const List = await fetchFromApi();
-  comment_Buttons.forEach((butt) => {
-    const ID = butt.getAttribute('id')
+  commentButtons.forEach((butt) => {
+    const ID = butt.getAttribute('id');
     const details = List[ID];
     butt.addEventListener('click', () => {
       const modal = `
@@ -32,10 +32,10 @@ const commentModal = async () => {
           </form>
         </div>
       </div>
-      `
-      document.querySelector('#modal').innerHTML= modal
-    })
-  })
-}
+      `;
+      document.querySelector('#modal').innerHTML = modal;
+    });
+  });
+};
 
-export default commentModal
+export default commentModal;

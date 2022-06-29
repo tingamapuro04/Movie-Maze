@@ -9,4 +9,4 @@ const fetchFromApi = async () => {
   return moviesArray;
 };
 
-export default fetchFromApi
+export default fetchFromApi;
