@@ -12,8 +12,6 @@ const postLike = async (itemId) => {
     },
     body: JSON.stringify({ item_id: itemId }),
   });
-  const data = res.text();
-  return data;
 };
 
 const likeIt = async () => {
