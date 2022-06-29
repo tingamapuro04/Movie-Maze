@@ -1,4 +1,5 @@
 import fetchFromApi from "./fromApi";
+import commentModal from "./Modal";
 
 
 const render = async() => {
@@ -11,12 +12,13 @@ const render = async() => {
     </div>
     <div class="movieDetails">
       <h2>${movie.name}</h2>
-      <i class="fa-light fa-heart"></i>
+      <i class="fa-light fa-heart likes"></i>
+      <p class="likeCount"></p>
     </div>
-    <div class="likes"><p><span></span>likes</p></div>
-    <button class="Btn-comment">Comments</button>
+    <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
     `;
   })
+  commentModal()
 };
 
 export default render

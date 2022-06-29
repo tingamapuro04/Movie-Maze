@@ -2,7 +2,7 @@ import fetchFromApi from "./fromApi";
 
 const commentModal = async () => {
   const comment_Buttons = document.querySelectorAll('.Btn-comment') 
-  const List = await fetchFromApi()
+  const List = await fetchFromApi();
   comment_Buttons.forEach((butt) => {
     const ID = butt.getAttribute('id')
     const details = List[ID];
@@ -15,10 +15,10 @@ const commentModal = async () => {
           <ul class="genre">
             <li><span>Type: </span> ${details.type}</li>
             <li><span>Language: </span> ${details.language}</li>
-            <li><span>Genre: </span> ${details.genre[0]}</li>
+            <li><span>Genre: </span> ${details.genres[0]}</li>
             <li><span>Runtime: </span> ${details.runtime}</li>
           </ul>
-          <p>${details.summary}.slice(0, 80)</p>
+          <p>${details.summary}</p>
         </div>
         <div class="old-comments">
           <h2>Comments</h2>
@@ -33,7 +33,7 @@ const commentModal = async () => {
         </div>
       </div>
       `
-      console.log(modal)
+      document.querySelector('#modal').innerHTML= modal
     })
   })
 }
