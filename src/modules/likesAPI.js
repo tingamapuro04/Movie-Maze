@@ -13,7 +13,7 @@ const postLike = async (itemId) => {
     body: JSON.stringify({ item_id: itemId }),
   });
   const data = res.text();
-  console.log(data);
+  return data;
 };
 
 const likeIt = async () => {
@@ -30,3 +30,5 @@ const likeIt = async () => {
     });
   });
 };
+
+export default likeIt
