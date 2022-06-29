@@ -1,25 +1,24 @@
 .likes > img {
-    width: 16px;
-    height: 16px;
-  }
-  
-  #main-Container > div > img {
-    width: 200px;
-    height: 300px;
-    margin-top: 20px;
-    border-radius: 20px;
-  }
-  
-  #main-Container {
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  
-  #main-Container > div {
-    width: 200px;
-  }
-  
+  width: 16px;
+  height: 16px;
+}
+
+#main-Container > div > img {
+  width: 200px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+#main-Container {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#main-Container > div {
+  width: 200px;
+}
