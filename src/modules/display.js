@@ -4,7 +4,7 @@ import commentModal from './Modal.js';
 const render = async () => {
   const mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi();
-  List.slice(0, 20).forEach((movie) => {
+  List.slice(0, 1).forEach((movie) => {
     mainCon.innerHTML += `
     <div class="main" id="${List.indexOf(movie)}">
       <img src=${movie.image.medium} alt= ${movie.name}>
@@ -18,6 +18,7 @@ const render = async () => {
     `;
   });
   commentModal();
+  modalClose()
 };
 
 export default render;

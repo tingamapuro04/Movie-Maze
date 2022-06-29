@@ -1,5 +1,19 @@
 import fetchFromApi from './fromApi.js';
 
+
+
+const modalClose = () => {
+  const close = document.querySelectorAll('.modal_close')
+  const main = document.querySelector('.comment_modal')
+  close.forEach((element) => {
+    element.addEventListener('click', () => {
+      main.style.display = 'none'
+    })
+  })
+}
+
+
+
 const commentModal = async () => {
   const commentButtons = document.querySelectorAll('.Btn-comment');
   const List = await fetchFromApi();
@@ -34,8 +48,11 @@ const commentModal = async () => {
       </div>
       `;
       document.querySelector('#modal').innerHTML = modal;
+      modalClose()
     });
   });
 };
 
-export default commentModal;
+
+
+export default commentModal 
