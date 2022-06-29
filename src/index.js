@@ -1,5 +1,7 @@
-// import _ from 'lodash';
+/*eslint-disable*/
+import _ from 'lodash';
 import './style.css';
-import Shows from './modules/displaymovies.js';
+import render from './modules/display.js';
 
-Shows.viewShows();
+window.addEventListener('DOMContentLoaded', render);
+
