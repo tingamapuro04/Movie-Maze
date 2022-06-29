@@ -10,11 +10,11 @@ const render = async() => {
       <img src=${movie.image.medium} alt= ${movie.name}>
     </div>
     <div class="movieDetails">
-      <h2>"${movie.name}"</h2>
+      <h2>${movie.name}</h2>
       <i class="fa-light fa-heart"></i>
     </div>
     <div class="likes"><p><span></span>likes</p></div>
-    <button id= "Btn-comment">Comments</button>
+    <button class="Btn-comment">Comments</button>
     `;
   })
 };
