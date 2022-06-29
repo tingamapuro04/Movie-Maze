@@ -6,10 +6,9 @@ class Shows{
     static viewShows = async () => {
         const response = await fetch(this.url);
         const shows = await response.json();
-        // console.log(JSON.stringify(shows))
         const showContainer = document.getElementById('main-Container');
     
-        shows.forEach((show) => {
+        shows.slice(0, 20).forEach((show) => {
           if (show.image.original !== null) {
             const showDiv = document.createElement('div');
             showDiv.classList.add('each-show');
@@ -25,8 +24,6 @@ class Shows{
           <button id="bt-${show.id}" class="button">Comments</button>`;
             showContainer.appendChild(showDiv);
           }
-        //   this.likes();
-        //   this.addLikes();
         });
     }
 }
