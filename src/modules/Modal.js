@@ -4,23 +4,66 @@ const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 const appId = 'XbvsaAE4Kq5sfF9VGiHS';
 const commentUrl = `${url}${appId}/comments`;
 
-const commentPost = async (itemId, Username, Comment) => {
+// const commentPost = async (itemId, Username, Comment) => {
   
-  const res = await fetch(commentUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      item_id: itemId,
-      username: Username,
-      comment: Comment,
-    }),
-  });
-  const data = res.text();
+//   const res = await fetch(commentUrl, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({
+//       item_id: itemId,
+//       username: Username,
+//       comment: Comment,
+//     }),
+//   });
+//   const data = res.text();
 
-  console.log(data);
-};
+//   console.log(data);
+// };
+
+
+
+const commentPost = async (itemId) => {
+  const userName = document.querySelector('.username')
+  const userComment = document.querySelector('.usercomment')
+  if (userName.value !== '' || userComment !== '') {
+    try {
+      const response = await fetch(commentUrl, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          item_id: itemId,
+          username: userName.value,
+          comment: userComment.value
+        })
+      })
+      const data = response.text()
+      if (response.ok) {
+        userName.value = ''
+        userComment.value = ''
+        console.log(data)
+      }
+    } catch (err) {
+      throw new Error ('Request error: ', err)
+    }
+    return true
+  }
+  return false
+}
+
+
+
+
+
+
+
+
+
+
+
 
 const modalClose = () => {
   const close = document.querySelectorAll('.modal_close')
@@ -65,12 +108,12 @@ const commentModal = async () => {
           <p>${details.summary}</p>
         </div>
         <div class="old-comments">
-          <h2>Comments</h2>
-          <ul></ul>
+          <h2 class="commentHead">Comments</h2>
+          <ul class="commentList"></ul>
         </div>
         <div class="form">
           <form id="form">
-            <input type="text" placeholder="Your name" required class="username">
+            <input type="text" placeholder="Your name"  class="username">
             <textarea class="usercomment" rows="10" columns="12" placeholder="Your comment please"></textarea>
             
             <button  id="${ID}" class="new_comment" type="button">comment</button>
@@ -85,9 +128,7 @@ const commentModal = async () => {
       commentbtn.addEventListener('click', () => {
         let userName = document.querySelector('.username').value;
         let usercomment = document.querySelector('.usercomment').value;
-        commentPost(ID, userName, usercomment)
-        userName = ''
-        usercomment = ''
+        commentPost(ID)
       })
     });
   });

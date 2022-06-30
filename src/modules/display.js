@@ -10,7 +10,7 @@ let count = 0
 const render = async () => {
   const mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi();
-  List.slice(0, 1).forEach((movie) => {
+  List.slice(6, 7).forEach((movie) => {
     fetchlikes().then((res) => {
       currentValue = res
       let assignLike = 0
