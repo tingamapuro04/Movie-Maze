@@ -1,6 +1,26 @@
 import fetchFromApi from './fromApi.js';
 
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+const appId = 'XbvsaAE4Kq5sfF9VGiHS';
+const commentUrl = `${url}${appId}/comments`;
 
+const commentPost = async (itemId, Username, Comment) => {
+  
+  const res = await fetch(commentUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: itemId,
+      username: Username,
+      comment: Comment,
+    }),
+  });
+  const data = res.text();
+
+  console.log(data);
+};
 
 const modalClose = () => {
   const close = document.querySelectorAll('.modal_close')
@@ -11,6 +31,16 @@ const modalClose = () => {
     })
   })
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -39,16 +69,26 @@ const commentModal = async () => {
           <ul></ul>
         </div>
         <div class="form">
-          <form>
-            <input type="text" placeholder="Your name">
-            <textarea rows="10" columns="12" placeholder="Your comment please"></textarea>
-            <input type="submit" value="Comment">
+          <form id="form">
+            <input type="text" placeholder="Your name" required class="username">
+            <textarea class="usercomment" rows="10" columns="12" placeholder="Your comment please"></textarea>
+            
+            <button  id="${ID}" class="new_comment" type="button">comment</button>
           </form>
         </div>
       </div>
       `;
       document.querySelector('#modal').innerHTML = modal;
       modalClose()
+
+      const commentbtn = document.querySelector('.new_comment')
+      commentbtn.addEventListener('click', () => {
+        let userName = document.querySelector('.username').value;
+        let usercomment = document.querySelector('.usercomment').value;
+        commentPost(ID, userName, usercomment)
+        userName = ''
+        usercomment = ''
+      })
     });
   });
 };

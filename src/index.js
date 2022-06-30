@@ -14,20 +14,7 @@ const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 const appId = 'XbvsaAE4Kq5sfF9VGiHS';
 const commentUrl = `${url}${appId}/comments`;
 
-const mobutu = async (item_id) => {
-  const res = await fetch(commentUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      item_id: item_id,
-      'username': 'username',
-      'comment': 'comment',
-    }),
-  })
-  const data = res.text()
-  console.log(data)
-}
 
-mobutu(45)
+console.log(commentUrl)
+
+
