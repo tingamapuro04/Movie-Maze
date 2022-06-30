@@ -106,7 +106,6 @@ const commentModal = async () => {
       const commentbtn = document.querySelector('.new_comment');
       commentbtn.addEventListener('click', () => {
         commentPost(ID)
-        commentFetch(ID);
       });
     });
   });
