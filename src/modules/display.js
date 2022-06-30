@@ -5,8 +5,8 @@
     const shows = await fetchFromApi();
     const showContainer = document.getElementById('main-Container');
 
-    shows.slice(0, 20).forEach((show, index) => {
-      if (show.image.original !== null) {
+    shows.forEach((show, index) => {
+      if (show.image !== null) {
         const showDiv = document.createElement('div');
         showDiv.classList.add('each-show');
         showDiv.innerHTML = `
