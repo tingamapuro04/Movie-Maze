@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .likes > img {
   width: 16px;
   height: 16px;
@@ -17,8 +22,20 @@
   gap: 32px;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #main-Container > div {
   width: 200px;
+}
+.each-show{
+  color: white;
+}
+.Btn-comment{
+  background-color: #FFD700;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
 }

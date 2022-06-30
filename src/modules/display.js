@@ -1,23 +1,28 @@
-import fetchFromApi from './fromApi.js';
-import commentModal from './Modal.js';
+ import fetchFromApi from './fromApi.js';
+ import commentModal from './Modal.js';
 
-const render = async () => {
-  const mainCon = document.querySelector('#main-Container');
-  const List = await fetchFromApi();
-  List.slice(0, 20).forEach((movie) => {
-    mainCon.innerHTML += `
-    <div class="main" id="${List.indexOf(movie)}">
-      <img src=${movie.image.medium} alt= ${movie.name}>
-    </div>
-    <div class="movieDetails">
-      <h2>${movie.name}</h2>
-      <i class="fa-regular fa-heart"></i>
-      <p class="likeCount"></p>
-    </div>
-    <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
-    `;
-  });
-  commentModal();
+  export const viewShows = async () => {
+    const shows = await fetchFromApi();
+    const showContainer = document.getElementById('main-Container');
+
+    shows.slice(0, 20).forEach((show, index) => {
+      if (show.image.original !== null) {
+        const showDiv = document.createElement('div');
+        showDiv.classList.add('each-show');
+        showDiv.innerHTML = `
+        <img src="${show.image.original}" alt="show-image">
+        <div class="each-name">
+          <li>${show.name}</li>
+          <div class="likes">
+           <i class="fa-regular fa-heart" id="li-${show.id}"></i>
+            <p>0 Likes</p>
+          </div>
+        </div>      
+        <button class="Btn-comment" id="bt-${index}">Comments</button>`;
+        showContainer.appendChild(showDiv);
+      }
+    });
+   commentModal();
 };
 
-export default render;
+ export default viewShows;

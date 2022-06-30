@@ -2,16 +2,16 @@ import fetchFromApi from './fromApi.js';
 
 const commentModal = async () => {
   const commentButtons = document.querySelectorAll('.Btn-comment');
-  const List = await fetchFromApi();
+  const shows = await fetchFromApi();
   commentButtons.forEach((butt) => {
-    const ID = butt.getAttribute('id');
-    const details = List[ID];
+    const index = butt.getAttribute('id').replace('bt-','');
+    const details = shows[index];
     butt.addEventListener('click', () => {
       const modal = `
       <div class="comment_modal">
         <button class="modal_close"><i class="fa-solid fa-xmark"></i></button>
         <div>
-          <img src=${details.image.medium} alt=${details.name}>
+          <img src=${details.image.original} alt=${details.name}>
           <ul class="genre">
             <li><span>Type: </span> ${details.type}</li>
             <li><span>Language: </span> ${details.language}</li>
