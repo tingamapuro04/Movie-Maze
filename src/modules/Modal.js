@@ -4,23 +4,42 @@ const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 const appId = 'XbvsaAE4Kq5sfF9VGiHS';
 const commentUrl = `${url}${appId}/comments`;
 
-// const commentPost = async (itemId, Username, Comment) => {
-  
-//   const res = await fetch(commentUrl, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({
-//       item_id: itemId,
-//       username: Username,
-//       comment: Comment,
-//     }),
-//   });
-//   const data = res.text();
 
-//   console.log(data);
-// };
+
+const commentFetch = async (itemId) => {
+  
+  try {
+    const comments = await fetch(`${commentUrl}?item_id=${itemId}`)
+    const data = await comments.json()
+    const commentHead = document.querySelector('.commentHead')
+    const commentList = document.querySelector('.commentList')
+    if (data.length > 0) {
+      commentHead.innerHTML = `Comments(${data.length})`
+      data.forEach((element) => {
+        commentList.innerHTML += `
+        <li>${element.creation_date} ${element.username}: ${element.comment}</li>
+        `
+      })
+    } else {
+      commentHead.innerHTML = 'Comments(0)'
+    }
+
+
+  } catch (err) {
+    throw new Error ('Requesting: ', err)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -44,6 +63,7 @@ const commentPost = async (itemId) => {
       if (response.ok) {
         userName.value = ''
         userComment.value = ''
+        commentFetch(itemId)
         console.log(data)
       }
     } catch (err) {
@@ -94,6 +114,7 @@ const commentModal = async () => {
     const ID = butt.getAttribute('id');
     const details = List[ID];
     butt.addEventListener('click', () => {
+      commentFetch(ID)
       const modal = `
       <div class="comment_modal">
         <button class="modal_close"><i class="fa-solid fa-xmark"></i></button>
@@ -126,8 +147,6 @@ const commentModal = async () => {
 
       const commentbtn = document.querySelector('.new_comment')
       commentbtn.addEventListener('click', () => {
-        let userName = document.querySelector('.username').value;
-        let usercomment = document.querySelector('.usercomment').value;
         commentPost(ID)
       })
     });
