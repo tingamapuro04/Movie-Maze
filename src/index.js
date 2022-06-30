@@ -10,11 +10,9 @@ const body = document.querySelector("body");
 
 
 
-const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const appId = 'XbvsaAE4Kq5sfF9VGiHS';
-const commentUrl = `${url}${appId}/comments`;
+// const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+// const appId = 'XbvsaAE4Kq5sfF9VGiHS';
+// const commentUrl = `${url}${appId}/comments`;
 
-
-console.log(commentUrl)
 
 

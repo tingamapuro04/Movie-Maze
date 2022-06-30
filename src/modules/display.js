@@ -28,15 +28,91 @@ const render = async () => {
       </div>
       <div class="movieDetails">
         <h2>${movie.name}</h2>
-        <p class="likeCount"></p>
-        <button type="button" class="like"><i class="fa-regular fa-heart likes"></i><span id="count-like">${assignLike}</span></button>
+        
+        
+        <i class="fa-regular fa-heart insta"></i>
+        <p class="likeCount">${assignLike}</p>
       </div>
       <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
       `;
       commentModal();
+      likePaticular()
     })
   });
   
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+const appId = 'XbvsaAE4Kq5sfF9VGiHS';
+const uniUrl = `${url}${appId}/likes/`;
+
+const postLike = async (itemId) => {
+  const res = await fetch(uniUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ item_id: itemId }),
+  });
+  const data = res.text()
+  console.log(data)
+};
+
+
+
+const likePaticular = async () => {
+  const allItems = await fetchFromApi()
+  const likes = document.querySelectorAll('.insta')
+  const likesCount = document.querySelectorAll('.likeCount')
+
+  likes.forEach((element, index) => {
+    let inner = JSON.parse(likesCount[index].innerHTML)
+    element.addEventListener('click', () => {
+      postLike(allItems[index].name)
+      inner += 1
+      if (inner === 1) {
+        likesCount[index].innerHTML =`${inner} like`
+      }
+      if (inner > 1) {
+        likesCount[index].innerHTML = `${inner} likes`
+      }
+      
+    })
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default render;
