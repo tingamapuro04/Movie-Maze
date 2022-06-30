@@ -22,7 +22,7 @@
   gap: 32px;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-image: url('./images/background.jpg');
+  background-image: url('./images/christy.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
