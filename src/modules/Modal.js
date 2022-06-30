@@ -4,50 +4,33 @@ const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 const appId = 'XbvsaAE4Kq5sfF9VGiHS';
 const commentUrl = `${url}${appId}/comments`;
 
-
-
 const commentFetch = async (itemId) => {
-  
   try {
-    const comments = await fetch(`${commentUrl}?item_id=${itemId}`)
-    const data = await comments.json()
-    const commentHead = document.querySelector('.commentHead')
-    const commentList = document.querySelector('.commentList')
+    const comments = await fetch(`${commentUrl}?item_id=${itemId}`);
+    const data = await comments.json();
+    const commentHead = document.querySelector('.commentHead');
+    const commentList = document.querySelector('.commentList');
     if (data.length > 0) {
-      commentHead.innerHTML = `Comments(${data.length})`
+      commentHead.innerHTML = `Comments(${data.length})`;
       data.forEach((element) => {
         commentList.innerHTML += `
         <li>${element.creation_date} ${element.username}: ${element.comment}</li>
-        `
-      })
+        `;
+      });
     } else {
-      commentHead.innerHTML = 'Comments(0)'
+      commentHead.innerHTML = 'Comments(0)';
     }
-
-
   } catch (err) {
-    throw new Error ('Requesting: ', err)
+    throw new Error('Requesting: ', err);
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
 
 const commentPost = async (itemId) => {
-  const userName = document.querySelector('.username')
-  const userComment = document.querySelector('.usercomment')
+  const userName = document.querySelector('.username');
+  const userComment = document.querySelector('.usercomment');
   if (userName.value !== '' || userComment !== '') {
     try {
+      
       const response = await fetch(commentUrl, {
         method: 'POST',
         headers: {
@@ -56,56 +39,31 @@ const commentPost = async (itemId) => {
         body: JSON.stringify({
           item_id: itemId,
           username: userName.value,
-          comment: userComment.value
-        })
-      })
-      const data = response.text()
+          comment: userComment.value,
+        }),
+      });
+      const data = response.text();
       if (response.ok) {
-        userName.value = ''
-        userComment.value = ''
-        commentFetch(itemId)
-        console.log(data)
+        userName.value = '';
+        userComment.value = '';
       }
     } catch (err) {
-      throw new Error ('Request error: ', err)
+      throw new Error('Request error: ', err);
     }
-    return true
+    return true;
   }
-  return false
-}
-
-
-
-
-
-
-
-
-
-
-
+  return false;
+};
 
 const modalClose = () => {
-  const close = document.querySelectorAll('.modal_close')
-  const main = document.querySelector('.comment_modal')
+  const close = document.querySelectorAll('.modal_close');
+  const main = document.querySelector('.comment_modal');
   close.forEach((element) => {
     element.addEventListener('click', () => {
-      main.style.display = 'none'
-    })
-  })
-}
-
-
-
-
-
-
-
-
-
-
-
-
+      main.style.display = 'none';
+    });
+  });
+};
 
 const commentModal = async () => {
   const commentButtons = document.querySelectorAll('.Btn-comment');
@@ -114,7 +72,7 @@ const commentModal = async () => {
     const ID = butt.getAttribute('id');
     const details = List[ID];
     butt.addEventListener('click', () => {
-      commentFetch(ID)
+      commentFetch(ID);
       const modal = `
       <div class="comment_modal">
         <button class="modal_close"><i class="fa-solid fa-xmark"></i></button>
@@ -143,16 +101,15 @@ const commentModal = async () => {
       </div>
       `;
       document.querySelector('#modal').innerHTML = modal;
-      modalClose()
+      modalClose();
 
-      const commentbtn = document.querySelector('.new_comment')
+      const commentbtn = document.querySelector('.new_comment');
       commentbtn.addEventListener('click', () => {
         commentPost(ID)
-      })
+        commentFetch(ID);
+      });
     });
   });
 };
 
-
-
-export default commentModal 
+export default commentModal;
