@@ -56,12 +56,15 @@ const commentPost = async (itemId) => {
   return false;
 };
 
+
+
 const modalClose = () => {
   const close = document.querySelectorAll('.modal_close');
   const main = document.querySelector('.comment_modal');
   close.forEach((element) => {
     element.addEventListener('click', () => {
       main.style.display = 'none';
+      close.style.border = 'none';
     });
   });
 };
