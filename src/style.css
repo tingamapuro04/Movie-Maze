@@ -24,7 +24,6 @@ main {
   margin-right: 2%;
   padding-left: 0;
   padding-right: 0;
- 
 }
 
 .main {
@@ -37,7 +36,6 @@ main {
 .main img {
   border-top-left-radius: 4%;
   border-top-right-radius: 4%;
-
 }
 
 footer h2 {
@@ -60,11 +58,12 @@ footer h2 {
 
 .Btn-comment {
   margin-bottom: 5%;
-  width: 80%;
   margin-left: 10%;
-  border-radius: 4%;
   background: red;
   color: aliceblue;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
 }
 
 .Btn-comment:hover {
@@ -77,8 +76,6 @@ footer h2 {
 }
 
 .insta:hover {
-  /* background: #fb3958; */
-
   transform: scale(1.2);
 }
 
@@ -87,21 +84,8 @@ footer h2 {
   margin-left: 1.5%;
 }
 
-footer {
-  margin-top: 12%;
-  border-top: 1px solid grey;
-  background: rgba(255, 255, 255, 0.107);
-}
-
 .each-show {
   color: white;
-}
-
-.Btn-comment {
-  background-color: #ffd700;
-  border-radius: 5px;
-  height: 40px;
-  width: 100px;
 }
 
 footer {
