@@ -112,8 +112,8 @@ footer {
   color: beige;
   bottom: 0;
   display: block;
-  padding: 0.2rem;
-
+  padding: 3% 0;
+  font-size: 2rem;
   /* position: fixed; */
   text-align: center;
   width: 100%;
@@ -123,6 +123,10 @@ footer {
 footer a {
   list-style: none;
   text-decoration: none;
+}
+
+footer h5 {
+  font-size: 1.5rem;
 }
 
 .fa-regular {
