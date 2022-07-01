@@ -1,8 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .likes > img {
   width: 16px;
   height: 16px;
@@ -30,31 +31,36 @@
 #main-Container > div {
   width: 200px;
 }
-.each-show{
+
+.each-show {
   color: white;
 }
-.Btn-comment{
-  background-color: #FFD700;
+
+.Btn-comment {
+  background-color: #ffd700;
   border-radius: 5px;
   height: 40px;
   width: 100px;
 }
-footer{
-background-color: #1f1f1f;
-color: beige;
-bottom: 0;
-display: block;
-padding: 0.2rem;
-/* position: fixed; */
-text-align: center;
-width: 100%;
-z-index: 2;
+
+footer {
+  background-color: #1f1f1f;
+  color: beige;
+  bottom: 0;
+  display: block;
+  padding: 0.2rem;
+
+  /* position: fixed; */
+  text-align: center;
+  width: 100%;
+  z-index: 2;
 }
 
-footer a{
+footer a {
   list-style: none;
   text-decoration: none;
 }
-.fa-regular{
+
+.fa-regular {
   color: red;
 }

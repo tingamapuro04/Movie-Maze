@@ -4,7 +4,7 @@ const commentModal = async () => {
   const commentButtons = document.querySelectorAll('.Btn-comment');
   const shows = await fetchFromApi();
   commentButtons.forEach((butt) => {
-    const index = butt.getAttribute('id').replace('bt-','');
+    const index = butt.getAttribute('id').replace('bt-', '');
     const details = shows[index];
     butt.addEventListener('click', () => {
       const modal = `

@@ -15,7 +15,6 @@
 //   }
 //   postLikes();
 
-
 // const likeIt = async () => {
 //   const allMovies = await fetchFromApi();
 //   const likes = document.querySelectorAll('.likes');
