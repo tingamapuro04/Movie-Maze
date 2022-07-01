@@ -1,18 +1,14 @@
 /*eslint-disable*/
 import _ from 'lodash';
 import './style.css';
-// import render from './modules/display.js';
-import { viewShows } from './modules/display.js';
-import { countMovies } from './modules/countMovies.js';
-viewShows();
-countMovies();
+import {render} from './modules/display.js';
 
 
-//  window.addEventListener('DOMContentLoaded', render);
 
-import { render, likePaticular } from './modules/display.js'
-import likeIt from './modules/likesAPI.js'
-import calculator from './jiji.js'
+import { likePaticular } from './modules/display.js'
+import { likeIt } from './modules/likesAPI.js'
+
+likeIt();
 
 
 render()

@@ -68,17 +68,17 @@ const modalClose = () => {
 
 const commentModal = async () => {
   const commentButtons = document.querySelectorAll('.Btn-comment');
-  const shows = await fetchFromApi();
+  const List = await fetchFromApi();
   commentButtons.forEach((butt) => {
-    const index = butt.getAttribute('id').replace('bt-', '');
-    const details = shows[index];
+    const ID = butt.getAttribute('id');
+    const details = List[ID];
     butt.addEventListener('click', () => {
       commentFetch(ID);
       const modal = `
       <div class="comment_modal">
         <button class="modal_close"><i class="fa-solid fa-xmark"></i></button>
         <div>
-          <img src=${details.image.original} alt=${details.name}>
+          <img src=${details.image.medium} alt=${details.name}>
           <ul class="genre">
             <li><span>Type: </span> ${details.type}</li>
             <li><span>Language: </span> ${details.language}</li>
@@ -95,7 +95,6 @@ const commentModal = async () => {
           <form id="form">
             <input type="text" placeholder="Your name"  class="username">
             <textarea class="usercomment" rows="10" columns="12" placeholder="Your comment please"></textarea>
-            
             <button  id="${ID}" class="new_comment" type="button">comment</button>
           </form>
         </div>
@@ -103,7 +102,6 @@ const commentModal = async () => {
       `;
       document.querySelector('#modal').innerHTML = modal;
       modalClose();
-
       const commentbtn = document.querySelector('.new_comment');
       commentbtn.addEventListener('click', () => {
         commentPost(ID);
