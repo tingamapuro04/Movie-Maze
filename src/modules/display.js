@@ -75,5 +75,4 @@ const render = async () => {
   counter.innerHTML = `(${count})`;
 };
 
-// export default viewShows;
 export { render, likePaticular };
