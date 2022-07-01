@@ -45,34 +45,33 @@ const likePaticular = async () => {
 };
 
 const render = async () => {
-  let mainCon = document.querySelector('#main-Container');
+  const mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi();
+  const res = await fetchlikes();
   List.slice(0, 8).forEach((movie) => {
-    fetchlikes().then((res) => {
-      currentValue = res;
-      let assignLike = 0;
-      const likeBtn = currentValue.filter(
-        (element) => element.item_id === movie.name,
-      );
-      if (likeBtn.length === 0) {
-        assignLike = 0;
-      } else {
-        assignLike = likeBtn[0].likes;
-      }
-      mainCon.innerHTML += `
-      <div class="main" id="${List.indexOf(movie)}">
-        <img src=${movie.image.medium} alt= ${movie.name}>
-        
-        <div class="movieDetails">
-          <h2>${movie.name.slice(0, 9)}</h2>
-          <i class="fa-regular fa-heart insta"></i>
-          <p class="likeCount">${assignLike} likes</p>
-        </div>
-        <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
-      </div>  
-      `;
-      commentModal();
-    });
+    currentValue = res;
+    let assignLike = 0;
+    const likeBtn = currentValue.filter(
+      (element) => element.item_id === movie.name,
+    );
+    if (likeBtn.length === 0) {
+      assignLike = 0;
+    } else {
+      assignLike = likeBtn[0].likes;
+    }
+    mainCon.innerHTML += `
+    <div class="main" id="${List.indexOf(movie)}">
+      <img src=${movie.image.medium} alt= ${movie.name}>
+      
+      <div class="movieDetails">
+        <h2>${movie.name.slice(0, 9)}</h2>
+        <i class="fa-regular fa-heart insta"></i>
+        <p class="likeCount">${assignLike} likes</p>
+      </div>
+      <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
+    </div>  
+    `;
+    commentModal();
     count += 1;
   });
   counter.innerHTML = `(${count})`;
