@@ -1,9 +1,14 @@
 /*eslint-disable*/
 import _ from 'lodash';
 import './style.css';
-import { render, likePaticular } from './modules/display.js'
-import likeIt from './modules/likesAPI.js'
-import calculator from './jiji.js'
+import {render} from './modules/display.js';
+
+
+
+import { likePaticular } from './modules/display.js'
+import { likeIt } from './modules/likesAPI.js'
+
+likeIt();
 
 
 render()
@@ -13,5 +18,6 @@ const like = document.querySelector('body')
 like.addEventListener('click', () => {
   likePaticular()
 })
+
 
 

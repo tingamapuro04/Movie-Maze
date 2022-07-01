@@ -20,7 +20,6 @@ const postLike = async (itemId) => {
     },
     body: JSON.stringify({ item_id: itemId }),
   });
-  // const data = res.text();
   return res;
 };
 
@@ -43,7 +42,6 @@ const likePaticular = async () => {
     });
   });
 };
-
 const render = async () => {
   const mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi();
@@ -77,4 +75,5 @@ const render = async () => {
   counter.innerHTML = `(${count})`;
 };
 
+// export default viewShows;
 export { render, likePaticular };

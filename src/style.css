@@ -1,27 +1,9 @@
-/* .likes > img {
-  width: 16px;
-  height: 16px;
-}
 
-#main-Container > div > img {
-  width: 200px;
-  height: 300px;
-  margin-top: 20px;
-  border-radius: 20px;
-}
-
-#main-Container {
+* {
+  margin: 0;
   padding: 0;
-  list-style-type: none;
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  box-sizing: border-box;
 }
-
-#main-Container > div {
-  width: 200px;
-} */
 
 body {
   margin: 0;
@@ -35,9 +17,9 @@ main {
 #main-Container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  column-gap: 1%;
-  row-gap: 1.6%;
-  margin-top: 2%;
+  column-gap: 2%;
+  row-gap: 2%;
+  margin-top: 6%;
   margin-left: 2%;
   margin-right: 2%;
   padding-left: 0;
@@ -76,11 +58,12 @@ footer h2 {
 
 .Btn-comment {
   margin-bottom: 5%;
-  width: 80%;
   margin-left: 10%;
-  border-radius: 4%;
   background: red;
   color: aliceblue;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
 }
 
 .Btn-comment:hover {
@@ -93,8 +76,6 @@ footer h2 {
 }
 
 .insta:hover {
-  /* background: #fb3958; */
-
   transform: scale(1.2);
 }
 
@@ -103,8 +84,28 @@ footer h2 {
   margin-left: 1.5%;
 }
 
+.each-show {
+  color: white;
+}
+
 footer {
-  margin-top: 12%;
-  border-top: 1px solid grey;
-  background: rgba(255, 255, 255, 0.107);
+  background-color: #1f1f1f;
+  color: beige;
+  bottom: 0;
+  display: block;
+  padding: 0.2rem;
+
+  /* position: fixed; */
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+footer a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.fa-regular {
+  color: red;
 }

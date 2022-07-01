@@ -1,6 +1,5 @@
 /*eslint-disable*/
 import fetchFromApi from './fromApi.js';
-
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const appId = 'XbvsaAE4Kq5sfF9VGiHS';
 const uniUrl = `${url}${appId}/likes/`;
@@ -15,7 +14,8 @@ const postLike = async (itemId) => {
   });
 };
 
-const likeIt = async () => {
+
+export const likeIt = async () => {
   const allMovies = await fetchFromApi();
   const likes = document.querySelectorAll('.likes');
   const likeCount = document.querySelectorAll('.likeCount');

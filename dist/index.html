@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MovieMaze Application</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -10,31 +11,25 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <title>MovieMaze Application</title>
-    <script defer="defer" src="main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
   <script defer src="main.js"></script></head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>  -->
+      <nav class="navbar  fixed-top navbar-expand-lg navbar-dark bg-dark">
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Logo here</a>
+          <a class="navbar-brand" href="#"><img src="./images/Cool Text - NEXTIFY 414390590494400.png" alt="nextify logo"></a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" id="nav-count" href="#">Movies</a>
+              <a class="nav-link" id="nav-count" href="#">Movies <span class="counterMovies"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">TVshows</a>
             </li>
             <li class="nav-item">
+
               <a
                 class="nav-link disabled"
                 href="#"
@@ -48,7 +43,7 @@
             <input
               class="form-control mr-sm-2"
               type="search"
-              placeholder="Search"
+              placeholder="Search episodes..."
               aria-label="Search"
             />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
@@ -59,12 +54,13 @@
       </nav>
     </header>
     <main>
-      <ul id="main-Container">
-        
-      </ul>
+
+      <ul id="main-Container"></ul>
+
+      <div id="modal"></div>
     </main>
     <footer>
-      <h2>
+      <h5>
         Created by
         <a href="https://github.com/tingamapuro04" target="_blank">Alphonce</a>
         and
@@ -72,12 +68,7 @@
           >Christabelle</a
         >
         under CC license.
-      </h2>
+      </h5>
     </footer>
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script> -->
   </body>
 </html>
