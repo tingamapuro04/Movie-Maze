@@ -45,7 +45,7 @@ color: beige;
 bottom: 0;
 display: block;
 padding: 0.2rem;
-position: fixed;
+/* position: fixed; */
 text-align: center;
 width: 100%;
 z-index: 2;
