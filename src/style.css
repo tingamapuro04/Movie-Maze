@@ -33,22 +33,20 @@ main {
 }
 
 #main-Container {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  width: 100%;
-  column-gap: 2%;
-  row-gap: 2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 64px;
   margin-top: 8%;
-  margin-left: 12%;
-  margin-right: 2%;
-  padding-left: 0;
-  padding-right: 0;
+   margin-left: 12%;
+
 }
 
 .main {
   display: flex;
   flex-direction: column;
   border-radius: 4%;
+  width: 300px;
   background: rgba(255, 255, 255, 0.107);
 }
 
