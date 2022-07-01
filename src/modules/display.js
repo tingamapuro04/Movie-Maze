@@ -45,7 +45,7 @@ const likePaticular = async () => {
 };
 
 const render = async () => {
-  const mainCon = document.querySelector('#main-Container');
+  let mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi();
   List.slice(0, 8).forEach((movie) => {
     fetchlikes().then((res) => {
@@ -75,7 +75,7 @@ const render = async () => {
     });
     count += 1;
   });
-  counter.innerHTML = `(${count * 2})`;
+  counter.innerHTML = `(${count})`;
 };
 
 export { render, likePaticular };
