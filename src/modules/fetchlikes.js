@@ -3,13 +3,14 @@ const appId = 'XbvsaAE4Kq5sfF9VGiHS';
 const uniUrl = `${url}${appId}/likes/`;
 
 const fetchlikes = async () => {
-  let likelist = []
+  let liking = [];
   await fetch(uniUrl)
-  .then((response) => response.json())
-  .then((res) => {
-    likelist =res
-  })
-  return likelist
-}
+    .then((response) => response.json())
+    .then((res) => {
+      liking = res;
+    });
+  return liking;
 
-export default fetchlikes
+};
+
+export default fetchlikes;

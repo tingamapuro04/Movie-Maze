@@ -42,10 +42,11 @@ const commentPost = async (itemId) => {
           comment: userComment.value,
         }),
       });
-      const data = response.text();
+      // const data = response.text();
       if (response.ok) {
         userName.value = '';
         userComment.value = '';
+        commentFetch(itemId)
       }
     } catch (err) {
       throw new Error('Request error: ', err);
@@ -106,6 +107,7 @@ const commentModal = async () => {
       const commentbtn = document.querySelector('.new_comment');
       commentbtn.addEventListener('click', () => {
         commentPost(ID)
+        
       });
     });
   });
