@@ -56,6 +56,12 @@ main {
   border-top-right-radius: 4%;
 }
 
+footer h2 {
+  padding: 4% 0;
+  color: white;
+  text-align: center;
+}
+
 .movieDetails h2 {
   color: whitesmoke;
   height: auto;
@@ -101,10 +107,4 @@ footer {
   margin-top: 12%;
   border-top: 1px solid grey;
   background: rgba(255, 255, 255, 0.107);
-}
-
-footer h2 {
-  padding: 4% 0;
-  color: white;
-  text-align: center;
 }
