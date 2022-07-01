@@ -1,7 +1,7 @@
 import fetchFromApi from './fromApi.js';
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const appId = 'XbvsaAE4Kq5sfF9VGiHS';
+const appId = 'ceWB32xJgqfic0VOprfl';
 const commentUrl = `${url}${appId}/comments`;
 
 const commentFetch = async (itemId) => {
