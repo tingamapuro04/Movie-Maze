@@ -12,6 +12,7 @@ const commentFetch = async (itemId) => {
     const commentList = document.querySelector('.commentList');
     if (data.length > 0) {
       commentHead.innerHTML = `Comments(${data.length})`;
+      commentList.innerHTML = '';
       data.forEach((element) => {
         commentList.innerHTML += `
         <li>${element.creation_date} ${element.username}: ${element.comment}</li>

@@ -47,7 +47,7 @@ const likePaticular = async () => {
 const render = async () => {
   const mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi();
-  List.slice(0, 7).forEach((movie) => {
+  List.slice(0, 8).forEach((movie) => {
     fetchlikes().then((res) => {
       currentValue = res;
       let assignLike = 0;
@@ -62,15 +62,14 @@ const render = async () => {
       mainCon.innerHTML += `
       <div class="main" id="${List.indexOf(movie)}">
         <img src=${movie.image.medium} alt= ${movie.name}>
-      </div>
-      <div class="movieDetails">
-        <h2>${movie.name}</h2>
         
-        
-        <i class="fa-regular fa-heart insta"></i>
-        <p class="likeCount">${assignLike}</p>
-      </div>
-      <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
+        <div class="movieDetails">
+          <h2>${movie.name.slice(0, 9)}</h2>
+          <i class="fa-regular fa-heart insta"></i>
+          <p class="likeCount">${assignLike} likes</p>
+        </div>
+        <button class="Btn-comment" id=${List.indexOf(movie)}>Comments</button>
+      </div>  
       `;
       commentModal();
     });
