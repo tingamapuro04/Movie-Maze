@@ -3,6 +3,7 @@ import _ from 'lodash';
 import './style.css';
 import { render, likePaticular } from './modules/display.js'
 import likeIt from './modules/likesAPI.js'
+import calculator from './jiji.js'
 
 
 render()
@@ -14,24 +15,3 @@ like.addEventListener('click', () => {
 })
 
 
-
-// const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-// const appId = 'XbvsaAE4Kq5sfF9VGiHS';
-// const commentUrl = `${url}${appId}/comments`;
-
-// const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-// const appId = 'XbvsaAE4Kq5sfF9VGiHS';
-// const uniUrl = `${url}${appId}/likes/`;
-
-
-// const fetchlikes = async () => {
-//   let liking = []
-//   await fetch(uniUrl)
-//   .then((response) => response.json())
-//   .then((res) => {
-//     liking = res
-//   })
-//   console.log(liking)
-// }
-
-// fetchlikes()
