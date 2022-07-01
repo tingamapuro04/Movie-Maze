@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import fetchFromApi from './fromApi.js';
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
@@ -29,4 +30,4 @@ const likeIt = async () => {
   });
 };
 
-export default likeIt
+export default likeIt;

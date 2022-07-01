@@ -10,7 +10,6 @@ const fetchlikes = async () => {
       liking = res;
     });
   return liking;
-
 };
 
 export default fetchlikes;

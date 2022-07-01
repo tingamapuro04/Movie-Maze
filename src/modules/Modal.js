@@ -31,7 +31,6 @@ const commentPost = async (itemId) => {
   const userComment = document.querySelector('.usercomment');
   if (userName.value !== '' || userComment !== '') {
     try {
-      
       const response = await fetch(commentUrl, {
         method: 'POST',
         headers: {
@@ -47,7 +46,7 @@ const commentPost = async (itemId) => {
       if (response.ok) {
         userName.value = '';
         userComment.value = '';
-        commentFetch(itemId)
+        commentFetch(itemId);
       }
     } catch (err) {
       throw new Error('Request error: ', err);
@@ -107,8 +106,7 @@ const commentModal = async () => {
 
       const commentbtn = document.querySelector('.new_comment');
       commentbtn.addEventListener('click', () => {
-        commentPost(ID)
-        
+        commentPost(ID);
       });
     });
   });
