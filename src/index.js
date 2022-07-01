@@ -10,3 +10,18 @@ countMovies();
 
 //  window.addEventListener('DOMContentLoaded', render);
 
+import { render, likePaticular } from './modules/display.js'
+import likeIt from './modules/likesAPI.js'
+import calculator from './jiji.js'
+
+
+render()
+const body = document.querySelector("body");
+
+const like = document.querySelector('body')
+like.addEventListener('click', () => {
+  likePaticular()
+})
+
+
+
