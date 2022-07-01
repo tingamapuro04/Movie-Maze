@@ -56,8 +56,6 @@ const commentPost = async (itemId) => {
   return false;
 };
 
-
-
 const modalClose = () => {
   const close = document.querySelectorAll('.modal_close');
   const main = document.querySelector('.comment_modal');
