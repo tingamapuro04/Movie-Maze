@@ -25,7 +25,7 @@
 
 body {
   margin: 0;
-  background: #000000;
+  background: #000;
 }
 
 main {
@@ -43,7 +43,6 @@ main {
   padding-left: 0;
   padding-right: 0;
 }
-
 
 .main {
   display: flex;
@@ -69,7 +68,7 @@ main {
   margin-left: 1.5%;
 }
 
-.Btn-comment { 
+.Btn-comment {
   margin-bottom: 5%;
   width: 80%;
   margin-left: 10%;
@@ -101,7 +100,7 @@ main {
 footer {
   margin-top: 12%;
   border-top: 1px solid grey;
-  background:rgba(255, 255, 255, 0.107); 
+  background: rgba(255, 255, 255, 0.107);
 }
 
 footer h2 {
