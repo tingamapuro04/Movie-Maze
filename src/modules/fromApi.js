@@ -1,19 +1,13 @@
-const url = 'https://api.tvmaze.com/shows?page=14';
-// const fetchFromApi = async () => {
-//   let moviesArray = [];
-//   await fetch(url)
-//     .then((response) => response.json())
-//     .then((response) => {
-//       moviesArray = response;
-//     });
-//   return moviesArray;
-// };
+const url = 'https://api.tvmaze.com/shows?page=30';
 
-const fetchFromApi = async () => {
+
+const fetchFrom = async () => {
   let moviesArray = [];
   const response = await fetch(url);
   moviesArray = response.json();
   return moviesArray;
-}
+};
+
+const fetchFromApi = fetchFrom()
 
 export default fetchFromApi;
