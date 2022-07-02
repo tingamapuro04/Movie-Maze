@@ -2,14 +2,13 @@ const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/
 const appId = 'XbvsaAE4Kq5sfF9VGiHS';
 const uniUrl = `${url}${appId}/likes/`;
 
-const fetchlikes = async () => {
+const fetchlikes1 = async () => {
   let liking = [];
-  await fetch(uniUrl)
-    .then((response) => response.json())
-    .then((res) => {
-      liking = res;
-    });
+  const response = await fetch(uniUrl);
+  liking = response.json();
   return liking;
 };
+
+const fetchlikes = fetchlikes1();
 
 export default fetchlikes;

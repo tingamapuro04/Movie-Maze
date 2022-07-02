@@ -8,6 +8,7 @@
 body {
   margin: 0;
   background: #000;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -33,19 +34,19 @@ main {
 }
 
 #main-Container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 64px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1%;
   margin-top: 8%;
-  margin-left: 12%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   border-radius: 4%;
-  width: 300px;
+  margin-bottom: 7%;
   background: rgba(255, 255, 255, 0.107);
 }
 
@@ -91,11 +92,13 @@ footer h2 {
 
 .insta {
   color: #fb3958;
-  margin-left: 1.5%;
+  margin-left: 4.5%;
+  transform: scale(1.7);
+  margin-bottom: 5%;
 }
 
 .insta:hover {
-  transform: scale(1.2);
+  transform: scale(1.9);
 }
 
 .likeCount {
