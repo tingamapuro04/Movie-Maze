@@ -14,7 +14,7 @@
 - Webpack
 - VS code
 
-## Live Demo (if available)
+## Live Demo 
 
 [Live Demo Link](https://tingamapuro04.github.io/JavaScript-KanBan-Project/)
 
