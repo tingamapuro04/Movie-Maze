@@ -8,9 +8,9 @@ import {render} from './modules/display.js';
 import { likePaticular } from './modules/display.js'
 
 
+window.addEventListener('DOMContentLoaded', render)
 
 
-render()
 const body = document.querySelector("body");
 
 const like = document.querySelector('body')
