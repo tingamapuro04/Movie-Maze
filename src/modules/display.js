@@ -45,7 +45,7 @@ const likePaticular = async () => {
 const render = async () => {
   const mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi;
-  const res = await fetchlikes();
+  const res = await fetchlikes;
   List.slice(0, 9).forEach((movie) => {
     currentValue = res;
     let assignLike = 0;
