@@ -1,4 +1,4 @@
-const url = 'https://api.tvmaze.com/shows?page=33';
+const url = 'https://api.tvmaze.com/shows?page=10';
 
 const fetchFrom = async () => {
   let moviesArray = [];

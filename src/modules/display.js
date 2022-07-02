@@ -70,10 +70,10 @@ const render = async () => {
     </div>  
     `;
     commentModal();
-    likePaticular();
     count += 1;
   });
   counter.innerHTML = `(${count})`;
+  likePaticular();
 };
 
 export { render, likePaticular };

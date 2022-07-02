@@ -34,11 +34,15 @@ main {
 }
 
 #main-Container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 1%;
+  display: flex;
+  flex-direction : row;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-items: baseline;
+  gap: 64px;
   margin-top: 8%;
-  margin-left: 2%;
+  margin-left: 4%;
   margin-right: 2%;
 }
 
@@ -53,6 +57,7 @@ main {
 .main img {
   border-top-left-radius: 4%;
   border-top-right-radius: 4%;
+  width: 300px;
 }
 
 footer h2 {
