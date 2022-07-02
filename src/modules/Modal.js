@@ -69,7 +69,7 @@ const modalClose = () => {
 
 const commentModal = async () => {
   const commentButtons = document.querySelectorAll('.Btn-comment');
-  const List = await fetchFromApi();
+  const List = await fetchFromApi;
   commentButtons.forEach((butt) => {
     const ID = butt.getAttribute('id');
     const details = List[ID];

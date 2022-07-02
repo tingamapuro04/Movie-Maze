@@ -24,7 +24,7 @@ const postLike = async (itemId) => {
 };
 
 const likePaticular = async () => {
-  const allItems = await fetchFromApi();
+  const allItems = await fetchFromApi;
   const likes = document.querySelectorAll('.insta');
   const likesCount = document.querySelectorAll('.likeCount');
 
@@ -44,7 +44,7 @@ const likePaticular = async () => {
 };
 const render = async () => {
   const mainCon = document.querySelector('#main-Container');
-  const List = await fetchFromApi();
+  const List = await fetchFromApi;
   const res = await fetchlikes();
   List.slice(0, 9).forEach((movie) => {
     currentValue = res;
