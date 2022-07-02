@@ -4,11 +4,8 @@ const uniUrl = `${url}${appId}/likes/`;
 
 const fetchlikes = async () => {
   let liking = [];
-  await fetch(uniUrl)
-    .then((response) => response.json())
-    .then((res) => {
-      liking = res;
-    });
+  const response = await fetch(uniUrl);
+  liking = response.json();
   return liking;
 };
 
