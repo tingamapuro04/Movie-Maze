@@ -33,9 +33,9 @@ const likePaticular = async () => {
     element.addEventListener('click', () => {
       postLike(allItems[index].name);
       inner += 1;
-      if (inner === 1) {
-        likesCount[index].innerHTML = `${inner} like`;
-      }
+      // if (inner === 1) {
+      //   likesCount[index].innerHTML = `${inner} like`;
+      // }
       if (inner > 1) {
         likesCount[index].innerHTML = `${inner} likes`;
       }
