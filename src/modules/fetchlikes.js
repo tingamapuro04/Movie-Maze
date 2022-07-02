@@ -9,6 +9,6 @@ const fetchlikes1 = async () => {
   return liking;
 };
 
-const fetchlikes = fetchlikes1()
+const fetchlikes = fetchlikes1();
 
 export default fetchlikes;
