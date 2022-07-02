@@ -46,7 +46,7 @@ const render = async () => {
   const mainCon = document.querySelector('#main-Container');
   const List = await fetchFromApi;
   const res = await fetchlikes;
-  List.slice(0, 9).forEach((movie) => {
+  List.slice(0, 12).forEach((movie) => {
     currentValue = res;
     let assignLike = 0;
     const likeBtn = currentValue.filter(
