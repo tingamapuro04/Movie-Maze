@@ -1,6 +1,5 @@
 const url = 'https://api.tvmaze.com/shows?page=30';
 
-
 const fetchFrom = async () => {
   let moviesArray = [];
   const response = await fetch(url);
@@ -8,6 +7,6 @@ const fetchFrom = async () => {
   return moviesArray;
 };
 
-const fetchFromApi = fetchFrom()
+const fetchFromApi = fetchFrom();
 
 export default fetchFromApi;
