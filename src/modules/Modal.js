@@ -1,7 +1,7 @@
 import fetchFromApi from './fromApi.js';
 
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const appId = 'XbvsaAE4Kq5sfF9VGiHS';
+const appId = 'ceWB32xJgqfic0VOprfl';
 const commentUrl = `${url}${appId}/comments`;
 
 const commentFetch = async (itemId) => {
@@ -62,13 +62,14 @@ const modalClose = () => {
   close.forEach((element) => {
     element.addEventListener('click', () => {
       main.style.display = 'none';
+      close.style.border = 'none';
     });
   });
 };
 
 const commentModal = async () => {
   const commentButtons = document.querySelectorAll('.Btn-comment');
-  const List = await fetchFromApi();
+  const List = await fetchFromApi;
   commentButtons.forEach((butt) => {
     const ID = butt.getAttribute('id');
     const details = List[ID];
@@ -76,21 +77,26 @@ const commentModal = async () => {
       commentFetch(ID);
       const modal = `
       <div class="comment_modal">
+      <div class = "popup">
         <button class="modal_close"><i class="fa-solid fa-xmark"></i></button>
-        <div>
+        <div class = "firstinfos">
           <img src=${details.image.medium} alt=${details.name}>
+          <div class="title">
+          <h1>${details.name}</h1>
+            </div>
           <ul class="genre">
-            <li><span>Type: </span> ${details.type}</li>
-            <li><span>Language: </span> ${details.language}</li>
-            <li><span>Genre: </span> ${details.genres[0]}</li>
-            <li><span>Runtime: </span> ${details.runtime}</li>
+            <li class = "content"><span>Type: </span> ${details.type}</li>
+            <li class = "content"><span>Language: </span> ${details.language}</li>
+            <li class = "content"><span>Genre: </span> ${details.genres[0]}</li>
+            <li class = "content"><span>Runtime: </span> ${details.runtime}</li>
           </ul>
-          <p>${details.summary}</p>
+          <p class = "summary">${details.summary}</p>
         </div>
         <div class="old-comments">
           <h2 class="commentHead">Comments</h2>
           <ul class="commentList"></ul>
         </div>
+        <p class = "center">Add new comment</p>
         <div class="form">
           <form id="form">
             <input type="text" placeholder="Your name"  class="username">
@@ -98,6 +104,7 @@ const commentModal = async () => {
             <button  id="${ID}" class="new_comment" type="button">comment</button>
           </form>
         </div>
+      </div>
       </div>
       `;
       document.querySelector('#modal').innerHTML = modal;
