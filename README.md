@@ -4,6 +4,9 @@
 
 > This is a Microverse project that entails a movie website where a user can add a like to a movie and or comment as well.
 
+# Preview
+![](./src/images/Maze.jpeg)
+
 
 ## Built With
 
