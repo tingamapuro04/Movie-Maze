@@ -18,7 +18,7 @@
 - VS code
 
 ## Live Demo
-To get a live demo ==> use this link ==> movie-maze.netlify.app
+To get a live demo ==> Copy and paste this link ==> movie-maze.netlify.app
 
 ## Getting Started
 
