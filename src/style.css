@@ -34,16 +34,9 @@ main {
 }
 
 #main-Container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-items: center;
-  justify-content: space-evenly;
-  align-items: baseline;
-  gap: 64px;
-  margin-top: 8%;
-  margin-left: 4%;
-  margin-right: 2%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1%;
 }
 
 .main {
@@ -270,4 +263,31 @@ p .summary {
   text-align: center;
   margin-left: 35%;
   margin-top: 2%;
+}
+
+@media screen and (max-width: 992px) {
+  #main-Container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (max-width: 662px) {
+  #main-Container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #main-Container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .main img {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
