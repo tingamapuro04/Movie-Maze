@@ -20,7 +20,7 @@
 ## Live Demo 
 
 [Live Demo Link](https://tingamapuro04.github.io/JavaScript-KanBan-Project/)
-
+[Netlify Link](movie-maze.netlify.app)
 
 ## Getting Started
 
