@@ -17,10 +17,8 @@
 - Webpack
 - VS code
 
-## Live Demo 
-
-[Live Demo Link](https://tingamapuro04.github.io/JavaScript-KanBan-Project/)
-[Netlify Link](movie-maze.netlify.app)
+## Live Demo
+To get a live demo ==> use this link ==> movie-maze.netlify.app
 
 ## Getting Started
 
