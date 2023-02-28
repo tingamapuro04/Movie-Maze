@@ -273,6 +273,10 @@ p .summary {
 }
 
 @media screen and (max-width: 662px) {
+  main {
+    margin: 2%;
+  }
+
   #main-Container {
     display: grid;
     grid-template-columns: auto auto;
@@ -280,6 +284,10 @@ p .summary {
 }
 
 @media screen and (max-width: 400px) {
+  main {
+    margin: 3%;
+  }
+
   #main-Container {
     display: grid;
     grid-template-columns: auto;
